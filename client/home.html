@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="main.js"></script>
+    <script src="https://js.zohostatic.com/catalystclient/1.0.0/catalystWebSDK.js"></script>
+    <script>
+        var cred = new catalystCredential();
+        cred.loadFromJSON({
+            project_Id: {{your_project_id}}, //Replace this value with your project ID
+            zaid: {{your_zaid}} //Replace this value with your ZAID
+        });
+        catalyst.initApp(cred, {});
+    </script>
+    <style>
+        .card {
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+            background-color: #a5a4a4;
+        }
+
+        .title {
+            font-size: 23px;
+            color: black;
+        }
+
+        button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 50%;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 22px;
+            color: black;
+        }
+
+        button:hover,
+        a:hover {
+            opacity: 0.7;
+        }
+
+        body {
+            background-color: #a5a4a4;
+            font-size: 20px;
+            visibility: hidden;
+        }
+
+        p {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body onload="showProfile()">
+
+    <h1 style="text-align:center">User Profile Information</h1>
+
+    <div class="card">
+        <img width="200px" height="450px"
+            src="https://theimag.org/wp-content/uploads/2015/01/user-icon-png-person-user-profile-icon-20.png"
+            alt="John" style="width:100%">
+        <p class="title" id="fname"></p>
+        <p class="title" id="lname"></p>
+        <p class="title" id="mailid"></p>
+        <p class="title" id="tzone"></p>
+        <p class="title" id="ctime"></p>
+        <p><button onclick="logout()">Logout</button></p>
+    </div>
+
+</body>
+
+</html>
